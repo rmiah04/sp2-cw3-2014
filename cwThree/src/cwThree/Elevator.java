@@ -23,7 +23,7 @@ public class Elevator {
 		ListIterator<Customer> iterator = registerList.listIterator();
 		//lift going up floor by floor.
 		for (int currentFloor = 1; currentFloor <= NUM_OF_FLOORS ; currentFloor++){
-			System.out.println("Lift going UP, current floor " + "<<" + currentFloor + ">>");
+			System.out.println("Lift going <UP>, current floor " + "<<" + currentFloor + ">>");
 			for (Customer value : cList) {
 				if(value.getfinished() == false){
 					if (value.getcurrentFloor() == currentFloor && value.getdestinationFloor() >= currentFloor){
@@ -47,7 +47,7 @@ public class Elevator {
 		}
 		//lift going down.
 		for (int currentFloor = NUM_OF_FLOORS; currentFloor > 0; currentFloor--){
-			System.out.println("Lift going DOWN, current floor " + "<<" + currentFloor + ">>");
+			System.out.println("Lift going <DOWN>, current floor " + "<<" + currentFloor + ">>");
 			for (Customer value : cList) {
 				if(value.getfinished() == false){
 					if (value.getcurrentFloor() == currentFloor && value.getdestinationFloor() <= currentFloor){
@@ -65,7 +65,7 @@ public class Elevator {
 		}
 	}
 	public void customerJoins(Customer cust){
-		System.out.println("Customer " + cust.getcustomerID() + " enters Lift.");
+		System.out.println("Customer " + cust.getcustomerID() + " enters Lift." + " and selects " + cust.getdestinationFloor());
 		cust.setInElevator(true);
 		registerList.add(cust);
 		}
