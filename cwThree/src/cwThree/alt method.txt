@@ -1,0 +1,5 @@
+The default stratergy for the project was to start at the first floor of the building then go up floor by floor till the elevator reaches the top  floor then go down floor by floor. On each floor the elevator checks the customer list to see who is on the current floor and picks them up and when they reach their destination floor they are dropped off.
+
+This is very ineffecient as the customer list is checked every floor regardless of whether anyone is using it at that floor and the elevator is constantly stopping at every floor.
+
+The alternative strategy would be to create an ArrayList of floors to reflect number of floors in the building, then add the customers to each floor based on their current floor. If their are customers on the floor that require the lift they will calll for it when the lift arrives it will check the list for that floor only and pick up the customers that are going the direction the lift is taking i.e up or down. This should reduce the number of times floors and customers are visited.

@@ -22,6 +22,7 @@ public class Customer {
 	int customerID = 0;
 	int currentFloor = 0;
 	int destinationFloor = 0;
+	int numVisited = 1;
 	boolean inElevator = false;
 	boolean finished = false;
 	/**
@@ -92,7 +93,7 @@ public class Customer {
 	}
 	/**
 	 * method sets the finished status to either true or false
-	 * @param finished status of customer either true or false
+	 * @param status finished status of customer either true or false
 	 */
 	public void setfinished(Boolean status){
 		this.finished = status;
@@ -106,11 +107,23 @@ public class Customer {
 	}
 	/**
 	 * method to set if the customer is inside the elevator or not
-	 * @param set status of inElevator to true or false.
+	 * @param status set status of inElevator to true or false.
 	 */
 	public void setInElevator(Boolean status){
 		this.inElevator = status;
 	}
-	
+	/**
+	 * Method returns the count of number of times the object has been visited
+	 * @return numVisited number of the object has been accessed
+	 */
+	public int getnumVisited(){
+		return this.numVisited;
+	}
+	/**
+	 * Method increments every time the object is accessed
+	 */
+	public void setVisited(){
+		this.numVisited++;
+	}
 	
 }

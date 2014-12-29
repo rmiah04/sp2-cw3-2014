@@ -2,23 +2,21 @@
  * 
  */
 package cwThree;
-import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.lang.reflect.Field;
-import org.junit.Test;
 /**
  * This class asks the user for input to create a customer list and a building with a set number of floors.
  * The building then operates an elevator which then serves the customers floor to floor.
  * @author Ronu Miah
+ * @version 1.0
  *
  */
 public class Building {
 	/**
 	 * main method asks the user for input to create a customer list and a building with a set number of floors.
 	 * The building then operates an elevator which then takes customers from their current floor to destination floor.
-	 * 
+	 * @param args elevator with ArrayList of Customer
 	 */
 	public static void main( String[]args) {
 		Scanner liftController = new Scanner(System.in);
@@ -40,7 +38,7 @@ public class Building {
 	    System.out.println("building has " + numOfFloors + " floors");
 	    //Asks for number of customers in the building
 	    do {
-	        System.out.println("Please enter a the number of customers in the building : ");
+	        System.out.println("Please enter the number of customers in the building : ");
 	        while (!liftController.hasNextInt()) {
 	            System.out.println("Please enter a valid positive number ");
 	            liftController.next();
@@ -52,6 +50,11 @@ public class Building {
 	    ArrayList<Customer> customerList = custList(numOfCust, numOfFloors);
 	    Elevator lift = new Elevator(numOfFloors);
 	    lift.liftOps(customerList);
+	    
+	    // Performance testing to check number of times each object was visited
+	    for (Customer value : customerList) {
+	    	System.out.println("customerID " + value.getcustomerID() + " number of times visited= " + value.getnumVisited());
+	    }
 
 	}
 	/**
